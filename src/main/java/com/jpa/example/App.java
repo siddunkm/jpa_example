@@ -26,47 +26,9 @@ public class App {
 		 //m1();
 		//m2(false);
 		System.out.println("Java");
-		System.out.println("Git");
+		//System.out.println("Git");
 	}
 
-	static void m1() {
-		String userID = "siddu";
-		SecrtyUser secrtyUser = new SecrtyUser(1 /* version */, "Active" /* rowStatusCD */, userID /* userName */,
-				1 /* activeTenantCD */ );
-
-		EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("Eclipselink_JPA_Oracle");
-
-		EntityManager entitymanager = emfactory.createEntityManager();
-
-		System.out.println(" inside storeNewUser SecrtyUser " + "string" + "" + userID);
-
-		SecrtyUser res = null;
-		try {
-			res = (SecrtyUser) entitymanager.createNamedQuery("SecrtyUser.findByUserName")
-					.setParameter("userName", secrtyUser.getUserName()).getSingleResult();
-		} catch (NoResultException e) {
-			System.out.println("User does not exist in the db");
-		}
-
-		System.out.println(" got SecrtyUser " + res);
-		entitymanager.getTransaction().begin();
-		if (res == null) {
-			try {
-				System.out.println(" inserting SecrtyUser %s" + secrtyUser.toString());
-				entitymanager.persist(secrtyUser);
-				entitymanager.flush();
-				System.out.println(" SecrtyUser inserted %s" + secrtyUser.toString());
-			} catch (Throwable t) {
-				System.out.println("error storing SecrtyUser");
-				return;
-			}
-		} else {
-			System.out.println("SecrtyUser is already exists ");
-		}
-		entitymanager.getTransaction().commit();
-		entitymanager.close();
-		emfactory.close();
-	}
 
 	static void m2(boolean cr) {
 		String userID = "siddu";
