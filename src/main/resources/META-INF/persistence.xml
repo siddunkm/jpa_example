@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+   xsi:schemaLocation="http://java.sun.com/xml/ns/persistence 
+   http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+   
+   <persistence-unit name="Eclipselink_JPA_Oracle" transaction-type="RESOURCE_LOCAL">
+   
+     <!--   <class>com.tutorialspoint.eclipselink.entity.Employee</class> -->
+    <class>com.fico.ps.df.ruleentities.SecrtyUser</class>
+    <class>com.fico.ps.df.ruleentities.SecrtyUserRole</class>
+    <class>com.fico.ps.df.ruleentities.SecrtyUserRoleMap</class>
+    <class>com.fico.ps.df.ruleentities.SecrtyAuthorization</class>
+
+      <properties>
+      <property name="eclipselink.cache.shared.default" value="false"/>
+      <property name="eclipselink.target-database" value="Oracle"/>
+      <property name="eclipselink.logging.level" value="SEVERE"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@172.27.52.34:1521:orcl"/>
+      <property name="javax.persistence.jdbc.password" value="rm_owner"/>
+      <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
+      <property name="javax.persistence.jdbc.user" value="rm_owner"/>
+         <!--  <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/test"/>
+         <property name="javax.persistence.jdbc.user" value="root"/>
+         <property name="javax.persistence.jdbc.password" value="ifrs"/>
+         <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+         <property name="eclipselink.logging.level" value="FINE"/>
+         <property name="eclipselink.ddl-generation" value="create-tables"/> -->
+      </properties>
+      
+   </persistence-unit>
+   
+      <persistence-unit name="Eclipselink_JPA_Mysql" transaction-type="RESOURCE_LOCAL">
+   
+      <class>com.tutorialspoint.eclipselink.entity.Employee</class> 
+      <properties>
+         <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/test"/>
+         <property name="javax.persistence.jdbc.user" value="root"/>
+         <property name="javax.persistence.jdbc.password" value="ifrs"/>
+         <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+         <property name="eclipselink.logging.level" value="FINE"/>
+         <property name="eclipselink.ddl-generation" value="create-tables"/> 
+      </properties>
+      
+   </persistence-unit>
+</persistence>
