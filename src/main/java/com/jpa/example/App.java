@@ -24,7 +24,8 @@ import com.fico.ps.df.ruleentities.SecrtyUserRoleMap;
 public class App {
 	public static void main(String[] args) {
 		 //m1();
-		m2(false);
+		//m2(false);
+		System.out.println("Java");
 	}
 
 	static void m1() {
