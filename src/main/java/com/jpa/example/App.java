@@ -26,6 +26,7 @@ public class App {
 		 //m1();
 		//m2(false);
 		System.out.println("Java");
+		System.out.println("Git");
 	}
 
 	static void m1() {
